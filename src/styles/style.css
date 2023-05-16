@@ -1,0 +1,18 @@
+:root {
+  /* Farver */
+  --lightest_brown: #d0c7be;
+  --light_brown: #b5a799;
+  --medium_brown: #93826c;
+  --dark_brown: #51473d;
+  --icon_background: #eae1da;
+  --icon_base: #bb9b84;
+  --icon_shadow: #a08572;
+  --black: #000000;
+
+  /* Baggrund på forside, about og kontakt */
+  --white: #ffffff;
+  /* Baggrund på produktsiderne og kursus */
+  --product_background: #f3f0ec;
+  /* Den sorte farve på siden */
+  --black: #252525;
+}
