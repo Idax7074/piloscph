@@ -3,21 +3,94 @@ import Logo from "./Logo.astro";
 ---
 
 <header class="banner">
-  <div class="header">
-    <div class="logo">
-      <Logo />
-    </div>
-
-    <ul id="ulcategories">
-      <li><a href="#">OM MIG</a></li>
-      <li><a href="#">SHOP</a></li>
-      <li><a href="#">KURSER</a></li>
-      <li><a href="#">KONTAKT</a></li>
-    </ul>
-    <ul id="shop"></ul>
+  <div class="logo">
+    <Logo />
   </div>
+  <nav>
+    <ul>
+      <li><a href="#">Om mig</a></li>
+      <li><a href="#">Shop</a></li>
+      <li><a href="#">Kurser</a></li>
+      <li><a href="#">Kontakt</a></li>
+    </ul>
+  </nav>
+  <ul class="shop">
+    <li><a href="#"><i class="fas fa-user"></i></a></li>
+    <li><a href="#"><i class="fas fa-shopping-basket"></i></a></li>
+  </ul>
 </header>
 
 <script src="../scripts/burger.js"></script>
+<script src="../scripts/scroll.js"></script>
 
-<style></style>
+<style>
+  header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-image: linear-gradient(#d0c7be, #d0c7be, transparent);
+    padding: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media (min-width: 1201px) {
+    /* header {
+      position: fixed;
+    }
+
+    .header-scrolled {
+      background-color: var(--lightest_brown);
+    } */
+
+    nav {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+
+      position: absolute;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-direction: row;
+    }
+
+    nav li {
+      float: left;
+      position: relative;
+      width: auto;
+    }
+
+    nav li:hover a {
+      color: #a08572;
+    }
+
+    nav a {
+      color: var(--black);
+      display: block;
+      padding: 15px 70px;
+      transition: all 0.25s ease;
+    }
+    .shop {
+      display: flex;
+      align-items: center;
+    }
+
+    .shop li {
+      padding-inline: 20px;
+      list-style: none;
+    }
+
+    .shop a {
+      color: var(--black);
+    }
+
+    .shop a:hover {
+      color: #a08572;
+    }
+  }
+</style>

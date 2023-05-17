@@ -16,3 +16,55 @@
   /* Den sorte farve på siden */
   --black: #252525;
 }
+
+@font-face {
+  font-family: "NeueHaasLight";
+  src: url("NeueHaasDisplayLight.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "NeueHaasMedium";
+  src: url("NeueHaasDisplayMediu.ttf") format("ttf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  line-height: 1.6;
+  color: var(--dark_brown);
+  font-family: "NeueHaasLight", sans-serif;
+}
+
+h1 {
+  font-family: "quiche-sans", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  color: var(--black);
+}
+
+h2 {
+  font-family: "quiche-sans", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+h3 {
+  font-family: "quiche-sans", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+span {
+  font-family: "NeueHaasMedium", sans-serif;
+}
+
+a {
+  font-family: "NeueHaasLight", sans-serif;
+  text-decoration: none;
+  text-transform: uppercase;
+}
