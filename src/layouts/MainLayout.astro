@@ -2,6 +2,7 @@
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/style.css";
+const { title } = Astro.props;
 ---
 
 <html lang="da">
@@ -12,10 +13,10 @@ import "../styles/style.css";
     <meta name="generator" content={Astro.generator} />
     <script src="https://kit.fontawesome.com/2efe57052b.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://use.typekit.net/zji8afw.css" />
-    <title>Astro</title>
+    <title>{title}</title>
   </head>
 
-  <body>
+  <body data-title={title}>
     <Header />
     <main>
       <slot />
@@ -24,4 +25,8 @@ import "../styles/style.css";
   </body>
 </html>
 
-<style></style>
+<style>
+  body[data-title="Kategori"] {
+    background: #f3f0ec;
+  }
+</style>
