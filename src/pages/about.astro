@@ -3,39 +3,102 @@ import MainLayout from "../layouts/MainLayout.astro";
 ---
 
 <MainLayout title="Om mig">
+  <div class="video-container">
+    <iframe class="responsive-iframe" src="https://hjortnaeskea.dk/kea/10_eksamen/Piloscph.mp4"></iframe>
+  </div>
   <section class="om_mig">
     <div class="tekst">
       <h2>Lidt om mig</h2>
       <p>
         Mit navn er Elena Rigas, jeg er opvokset i Danmark, men en stor del af min opvækst har været præget af det græske, da min far er græker. Min interesse for keramik og ler kommer sig af, at min mor og jeg startede med at lave keramik sammen. Da
         der skete en masse ting i vores liv på det tidspunkt brugte vi det som en form for terapi og siden da har min passion for keramik og ler bare vokset.
-        <br />
-        Størstedelen af min inspiration kommer fra det græske, altså antikkens Grækenland. Jeg tager meget udgangspunkt i formerne derfra og derefter blander det med den rå nordiske stil, herfra får jeg skabt et tidløst, jordnært og råt look.
       </p>
+      <br />
+      <p>Størstedelen af min inspiration kommer fra det græske, altså antikkens Grækenland. Jeg tager meget udgangspunkt i formerne derfra og derefter blander det med den rå nordiske stil, herfra får jeg skabt et tidløst, jordnært og råt look.</p>
     </div>
     <img src="/images/elena.webp" alt="elena" />
   </section>
   <section class="baeredygtig">
     <h2>Vi er også bæredygtige</h2>
-    <p>
-      Hos Piloscph gør vi også en stor indsats for at passe på vores klode, vi går som så mange andre også op i bæredygtigheden, blandt andet ved den måde vi fremstiller produkterne på, men også ved at have en viden indenfor de ingredienser vi
-      bruger. Vores fordel inden for bæredygtigheden er, at vores materialer er fremstillet med ler, som er en naturressource og derfor er meget bæredygtigt at udvinde fra vores natur.
-    </p>
+    <div class="grid_1-1">
+      <div class="">
+        <p>
+          Hos Piloscph gør vi også en stor indsats for at passe på vores klode, vi går som så mange andre også op i bæredygtigheden, blandt andet ved den måde vi fremstiller produkterne på, men også ved at have en viden indenfor de ingredienser vi
+          bruger.
+        </p>
+      </div>
+      <div class="">
+        <p>Vores fordel inden for bæredygtigheden er, at vores materialer er fremstillet med ler, som er en naturressource og derfor er meget bæredygtigt at udvinde fra vores natur.</p>
+      </div>
+    </div>
     <img src="/images/in_the_making1.webp" alt="in the making" />
   </section>
   <section class="ler">
     <h2>Lidt om ler</h2>
-    <p>
-      Vidste du, at ler er blevet brugt gennem årtier, både til at bygge huse med, men også til keramik, skulpturer og kunst. Man bruger for det meste ler til keramik, især fordi det er meget holdbart, men i dag bruges keramik meget, da det kan
-      findes over alt. Ved forarbejdningen af ler kræves der faktisk ikke så meget energi i modsætning til andre materialer, det betyder også at ler ikke belaster miljøet lige så meget. Derudover kan det ler, der er i overskud og ikke er blevet
-      brændt endnu, faktisk genanvendes, hvilket vi også i stor grad gør hos Piloscph. Ler kan heller aldrig blive til byggeaffald da det er biologisk nedbrydeligt
-    </p>
+    <div class="grid_1-1">
+      <div class="">
+        <p>
+          Vidste du, at ler er blevet brugt gennem årtier, både til at bygge huse med, men også til keramik, skulpturer og kunst. Man bruger for det meste ler til keramik, især fordi det er meget holdbart, men i dag bruges keramik meget, da det kan
+          findes over alt. Ved forarbejdningen af ler kræves der faktisk ikke så meget energi i modsætning til andre materialer, det betyder også at ler ikke belaster miljøet lige så meget.
+        </p>
+      </div>
+      <div class="">
+        <p>Derudover kan det ler, der er i overskud og ikke er blevet brændt endnu, faktisk genanvendes, hvilket vi også i stor grad gør hos Piloscph. Ler kan heller aldrig blive til byggeaffald da det er biologisk nedbrydeligt.</p>
+      </div>
+    </div>
   </section>
 </MainLayout>
 
 <style>
+  img {
+    width: 100%;
+    height: auto;
+  }
   section {
+    margin-top: 120px;
+
     max-width: 1500px;
     margin-inline: auto;
+  }
+
+  .om_mig {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10%;
+
+    padding-bottom: 100px;
+    border-bottom: 1px solid black;
+  }
+
+  .om_mig h2 {
+    margin-bottom: 100px;
+  }
+
+  .baeredygtig h2 {
+    display: flex;
+    justify-content: center;
+
+    margin-bottom: 50px;
+  }
+
+  .grid_1-1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3%;
+
+    margin-bottom: 50px;
+  }
+
+  .ler {
+    border: 1px solid black;
+
+    padding: 8%;
+  }
+
+  .ler h2 {
+    display: flex;
+    justify-content: center;
+
+    margin-bottom: 50px;
   }
 </style>
