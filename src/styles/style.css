@@ -15,6 +15,12 @@
   --product_background: #f3f0ec;
   /* Den sorte farve på siden */
   --black: #252525;
+
+  /*Typografi*/
+  --font-h1: 2.813rem;
+  --font-p: 1.563rem;
+  --font-small: 1.25rem;
+  --font-smaller: 0.938rem;
 }
 
 @font-face {
@@ -38,12 +44,14 @@ body {
   line-height: 1.6;
   color: var(--dark_brown);
   font-family: "NeueHaasLight", sans-serif;
+  font-size: var(--font-p);
 }
 
 h1 {
   font-family: "quiche-sans", sans-serif;
   font-weight: 500;
   font-style: normal;
+  font-size: var(--font-h1);
   color: var(--black);
 }
 
@@ -59,9 +67,9 @@ h3 {
   font-style: normal;
 }
 
-span {
+/* span {
   font-family: "NeueHaasMedium", sans-serif;
-}
+} */
 
 a {
   font-family: "NeueHaasLight", sans-serif;

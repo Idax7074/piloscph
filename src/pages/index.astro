@@ -1,5 +1,6 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+import Button from "../components/Button.astro";
 import "../styles/style.css";
 ---
 
@@ -9,12 +10,13 @@ import "../styles/style.css";
   </div>
   <section class="om">
     <div class="tekst">
-      <h1>piloscph</h1>
-      <p>
-        Opdag keramik med inspiration fra antikkens Grækenland blandet med det nordiske tidløse design hos Piloscph. Meget af inspirationen i mine værker kommer fra det antikke Grækenland, med en blanding af det rå nordiske look. Jeg sætter derfor en
-        stor ære i at skabe et tidløst design, der skaber ro i sindet og ikke mindst i dit hjem.
-      </p>
-      <button>Om mig</button>
+      <h1>Piloscph</h1>
+      <p>Opdag keramik med inspiration fra antikkens Grækenland blandet med det nordiske tidløse design hos Piloscph.</p>
+      <p>Meget af inspirationen i mine værker kommer fra det antikke Grækenland, med en blanding af det rå nordiske look.</p>
+      <p>Jeg sætter derfor en stor ære i at skabe et tidløst design, der skaber ro i sindet og ikke mindst i dit hjem.</p>
+      <div class="button">
+        <Button variant="secondary">Om mig</Button>
+      </div>
     </div>
     <img src="/images/old_door.webp" alt="old greek door" />
   </section>
@@ -22,17 +24,17 @@ import "../styles/style.css";
     <div class="image_1">
       <img src="/images/mugs1.webp" alt="mugs" />
       <p>Beige mug</p>
-      <p>249,00 DKK</p>
+      <span>249,00 DKK</span>
     </div>
     <div class="image_2">
       <img src="/images/vase1.webp" alt="vase" />
       <p>Beige stor vase</p>
-      <p>1600,00 DKK</p>
+      <span>1600,00 DKK</span>
     </div>
     <div class="image_3">
       <img src="/images/bowl4.webp" alt="bowls" />
       <p>Salat bowl</p>
-      <p>800,00 DKK</p>
+      <span>800,00 DKK</span>
     </div>
   </section>
   <section class="instagram">
@@ -41,11 +43,72 @@ import "../styles/style.css";
     <article class="grid_4-2"></article>
   </section>
 </MainLayout>
-
 <style>
   .banner img {
     width: 100%;
     height: auto;
     display: block;
+  }
+
+  section {
+    margin-top: 120px;
+
+    max-width: 1500px;
+    margin-inline: auto;
+  }
+
+  .om {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10%;
+  }
+
+  .om h1 {
+    margin-bottom: 100px;
+  }
+
+  .om img {
+    width: 100%;
+    height: auto;
+  }
+
+  .om p {
+    margin-bottom: 15px;
+  }
+
+  .button {
+    /* display: flex;
+    justify-content: center; */
+    margin-top: 100px;
+  }
+
+  .produkter {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 5%;
+  }
+
+  .produkter img {
+    width: 100%;
+    height: auto;
+  }
+
+  .produkter p {
+    font-size: var(--font-small);
+  }
+
+  .produkter span {
+    font-size: var(--font-smaller);
+  }
+
+  .instagram {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .instagram a {
+    text-transform: capitalize;
+    color: var(--dark-brown);
   }
 </style>
