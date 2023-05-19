@@ -1,13 +1,46 @@
 ---
+import "../styles/style.css";
+import MainLayout from "../layouts/MainLayout.astro";
 ---
 
-<section class="tekst">
-  <h2>Kontakt os</h2>
-  <p>Her kan du komme i kontakt med os, hvis du har spørgsmål omkring produkter, samarbejde, bestillinger mm.</p>
-  <div class="kontakt"></div>
-</section>
-<section class="grid-1-1-1">
-  <img src="/images/in_the_making5.webp" alt="in the making" />
-  <img src="/images/chain_vase.webp" alt="kæde vase" />
-  <img src="/images/mad_billede.webp" alt="tapas i bowls sættet" />
-</section>
+<MainLayout title="Kontakt">
+  <section class="tekst">
+    <h1>Kontakt os</h1>
+    <p>Her kan du komme i kontakt med os, hvis du har spørgsmål omkring produkter, samarbejde, bestillinger mm.</p>
+    <div class="kontakt"></div>
+  </section>
+  <section class="grid_1-1-1">
+    <img src="/images/in_the_making5.webp" alt="in the making" />
+    <img src="/images/chain_vase.webp" alt="kæde vase" />
+    <img src="/images/mad_billede.webp" alt="tapas i bowls sættet" />
+  </section>
+</MainLayout>
+
+<style>
+  section {
+    margin-top: 120px;
+
+    max-width: 1500px;
+    margin-inline: auto;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  .tekst {
+    margin-top: 300px;
+  }
+
+  .tekst h1 {
+    display: flex;
+    justify-content: center;
+  }
+
+  .grid_1-1-1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2%;
+  }
+</style>
