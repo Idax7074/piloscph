@@ -4,7 +4,7 @@ import MainLayout from "../layouts/MainLayout.astro";
 
 <MainLayout title="Om mig">
   <div class="video-container">
-    <iframe class="responsive-iframe" src="https://hjortnaeskea.dk/kea/10_eksamen/Piloscph.mp4"></iframe>
+    <iframe src="https://hjortnaeskea.dk/kea/10_eksamen/Piloscph.mp4" frameborder="0" allowfullscreen class="video"></iframe>
   </div>
   <section class="om_mig">
     <div class="tekst">
@@ -35,7 +35,7 @@ import MainLayout from "../layouts/MainLayout.astro";
   </section>
   <section class="ler">
     <h2>Lidt om ler</h2>
-    <div class="grid_1-1">
+    <div class="ler-tekst">
       <div class="">
         <p>
           Vidste du, at ler er blevet brugt gennem årtier, både til at bygge huse med, men også til keramik, skulpturer og kunst. Man bruger for det meste ler til keramik, især fordi det er meget holdbart, men i dag bruges keramik meget, da det kan
@@ -59,6 +59,22 @@ import MainLayout from "../layouts/MainLayout.astro";
 
     max-width: 1500px;
     margin-inline: auto;
+  }
+
+  .video-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-top: 40%;
+    padding-bottom: 10%;
+  }
+
+  .video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
   }
 
   .om_mig {
@@ -93,6 +109,10 @@ import MainLayout from "../layouts/MainLayout.astro";
     border: 1px solid black;
 
     padding: 8%;
+  }
+
+  .ler-tekst {
+    padding-inline: 170px;
   }
 
   .ler h2 {
