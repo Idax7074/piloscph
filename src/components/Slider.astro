@@ -1,0 +1,56 @@
+---
+import Swiper from "swiper";
+
+import "swiper/css";
+---
+
+<template>
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img src="/images/banner_billede1" alt="Banner billede" />
+      </div>
+      <div class="swiper-slide">
+        <img src="/images/banner_billede2" alt="Banner billede" />
+      </div>
+      <div class="swiper-slide">
+        <img src="/images/banner_billede3" alt="Banner billede" />
+      </div>
+    </div>
+  </div>
+</template>
+
+<style>
+  template {
+    display: contents;
+  }
+
+  .swiper-container {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+</style>
+
+<script>
+  import Swiper from "swiper";
+
+  export function onMount() {
+    const swiper = new Swiper(".swiper-container", {
+      loop: true,
+      autoplay: {
+        delay: 5000,
+      },
+    });
+  }
+</script>
