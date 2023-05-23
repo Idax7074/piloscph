@@ -1,0 +1,30 @@
+---
+/*https://sjogjgnnezgfpkahworr.supabase.co */
+
+/*eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNqb2dqZ25uZXpnZnBrYWh3b3JyIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODQzOTUwNTQsImV4cCI6MTk5OTk3MTA1NH0.vWMUEXcwFWRZ1s2ukS1uPY9qj2Rglhz-eEeRLppRxt0 */
+
+const url = "https://sjogjgnnezgfpkahworr.supabase.co/rest/v1/piloscph_produkter?tags=eq.mug";
+const api = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNqb2dqZ25uZXpnZnBrYWh3b3JyIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODQzOTUwNTQsImV4cCI6MTk5OTk3MTA1NH0.vWMUEXcwFWRZ1s2ukS1uPY9qj2Rglhz-eEeRLppRxt0";
+
+const options = {
+  method: "GET",
+  headers: {
+    apikey: api,
+  },
+};
+
+const data = await fetch(url, options).then((res) => res.json());
+
+import MainLayout from "../../layouts/MainLayout.astro";
+import Mug from "../../components/Mug.astro";
+---
+
+<MainLayout>
+  <section class="grid_3-auto">
+    {
+      data.map((mug) => {
+        return <Mug data={mug} />;
+      })
+    }
+  </section>
+</MainLayout>
