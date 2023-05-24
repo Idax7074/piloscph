@@ -7,27 +7,27 @@ import MainLayout from "../layouts/MainLayout.astro";
   <section class="tekst">
     <h1>Kontakt os</h1>
     <div class="kontakt">
-    <p>Her kan du komme i kontakt med os, hvis du har spørgsmål omkring produkter, samarbejde, bestillinger mm.</p>
-        <form name="contact">
-          <div class="form-felt required">
-            <label for="navn">Navn</label>
-            <input type="text" id="navn" name="navn" placeholder="Sofie" />
-          </div>
-          <div class="form-felt required">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="sofiehansen@gmail.com" />
-          </div>
-          <div class="form-felt required">
-            <label for="telefon">Telf. nr</label>
-            <input type="mobil" id="telefon" name="telefon" placeholder="12345678" />
-          </div>
-          <div class="form-felt required">
-            <label for="andet">Skriv en besked her...</label>
-            <textarea name="besked" id="besked" cols="30" rows="10"></textarea>
-          </div>
-          <button type="submit">Indsend</button>
-        </form>
-      </div>
+      <p>Her kan du komme i kontakt med os, hvis du har spørgsmål omkring produkter, samarbejde, bestillinger mm.</p>
+      <form name="contact">
+        <div class="form-felt required">
+          <label for="navn">Navn</label>
+          <input type="text" id="navn" name="navn" placeholder="Sofie" />
+        </div>
+        <div class="form-felt required">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="sofiehansen@gmail.com" />
+        </div>
+        <div class="form-felt required">
+          <label for="telefon">Telf. nr</label>
+          <input type="mobil" id="telefon" name="telefon" placeholder="12345678" />
+        </div>
+        <div class="form-felt required">
+          <label for="andet">Skriv en besked her...</label>
+          <textarea name="besked" id="besked" cols="30" rows="10"></textarea>
+        </div>
+        <button type="submit">Indsend</button>
+      </form>
+    </div>
   </section>
   <section class="grid_1-1-1">
     <img src="/images/in_the_making5.webp" alt="in the making" />
@@ -38,7 +38,7 @@ import MainLayout from "../layouts/MainLayout.astro";
 
 <style>
   section {
-    margin-top: 120px;
+    margin-top: 200px;
 
     max-width: 90%;
     margin-inline: auto;
@@ -65,41 +65,38 @@ import MainLayout from "../layouts/MainLayout.astro";
   }
 
   form {
-  padding: 2rem;
-  border-radius: 8px;
-}
+    padding: 2rem;
+    border-radius: 8px;
+  }
 
-.form-felt label {
-  display: block;
-}
+  .form-felt label {
+    display: block;
+  }
 
-.form-felt {
-  margin-block: 20px;
-  color: black;
-}
+  .form-felt {
+    margin-block: 20px;
+    color: black;
+  }
 
-form input {
-  border: 2px solid black;
-  border-radius: 2px;
-  padding: 8px;
-}
+  form input {
+    border: 2px solid black;
+    border-radius: 2px;
+    padding: 8px;
+  }
 
-form textarea {
-  border: 2px solid black;
-  border-radius: 2px;
-  padding: 8px;
-}
+  form textarea {
+    border: 2px solid black;
+    border-radius: 2px;
+    padding: 8px;
+  }
 
-.required label:after {
-  content: "*";
-  color: red;
-}
-.kontakt{
-  margin-inline: auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-
-
-
+  .required label:after {
+    content: "*";
+    color: red;
+  }
+  .kontakt {
+    margin-inline: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
 </style>
