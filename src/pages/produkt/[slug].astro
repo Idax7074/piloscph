@@ -1,0 +1,207 @@
+---
+export async function getStaticPaths() {
+  const url = "https://sjogjgnnezgfpkahworr.supabase.co/rest/v1/piloscph_produkter";
+  const api = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNqb2dqZ25uZXpnZnBrYWh3b3JyIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODQzOTUwNTQsImV4cCI6MTk5OTk3MTA1NH0.vWMUEXcwFWRZ1s2ukS1uPY9qj2Rglhz-eEeRLppRxt0";
+
+  const options = {
+    method: "GET",
+    headers: {
+      apikey: api,
+    },
+  };
+  const data = await fetch(url, options).then((response) => response.json());
+
+  const pagesGenerate = data.map((onePost) => {
+    return {
+      params: { slug: onePost.slug },
+      props: { mug: onePost },
+    };
+  });
+  console.log(data);
+  return pagesGenerate;
+}
+
+//const { id } = Astro.params;
+const { mug } = Astro.props;
+
+import Mainlayout from "../../layouts/MainLayout.astro";
+import Button from "../../components/Button.astro";
+---
+
+<Mainlayout title="Produkter">
+  <section class="produktet">
+    <p class="breadcrumb"><a href="/kategori">Alle produkter</a> / <a href="/category/mugs">Mugs</a> / <span>{mug.name}</span></p>
+    <div class="product grid_1-1">
+      <div class="">
+        <img src={`/images/${mug.image}`} alt="Produktbillede" />
+      </div>
+      <div class="tekst">
+        <h1>{mug.name}</h1>
+        <p>{mug.price} DKK</p>
+        <p>inkl. moms</p>
+        <form action="antal">
+          <label for="antal">Antal</label>
+          <select name="antal" id="antal">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+          </select>
+          <br />
+          <Button variant="secondary">Tilføj til kurven</Button>
+        </form>
+      </div>
+    </div>
+  </section>
+  <section class="description">
+    <h2>Information om produktet</h2>
+    <p class="tekst1">{mug.description}</p>
+  </section>
+  <section class="andreProdukter">
+    <h2>Andre produkter til din smag</h2>
+    <div class="grid_3-1">
+      <div class="lemon">
+        <img src="/images/citronpresser_gul.webp" alt="" />
+        <p>Yellow lemon squeezer</p>
+        <p><span>320</span></p>
+      </div>
+      <div class="vase">
+        <img src="/images/small_vase_black.webp" alt="" />
+        <p>Small black vase</p>
+        <p><span>150</span></p>
+      </div>
+      <div class="bowl">
+        <img src="/images/ramen_bowl_brown.webp" alt="" />
+        <p>Brown ramen bowl</p>
+        <p><span>395</span></p>
+      </div>
+    </div>
+  </section>
+</Mainlayout>
+
+<style>
+  .produktet {
+    margin-top: 200px;
+  }
+
+  section {
+    max-width: 90%;
+    margin-inline: auto;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  h1 {
+    margin-bottom: 5%;
+  }
+
+  h2 {
+    margin-bottom: 1.5%;
+  }
+
+  .breadcrumb {
+    text-align: center;
+  }
+
+  .breadcrumb a {
+    text-transform: uppercase;
+    color: var(--dark-brown);
+  }
+
+  .breadcrumb span {
+    text-transform: uppercase;
+    font-family: "NeueHaasMedium", sans-serif;
+    font-weight: 800;
+  }
+
+  .grid_1-1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10%;
+  }
+
+  .product {
+    margin-top: 200px;
+  }
+
+  .tekst {
+    padding-top: 10%;
+  }
+
+  form {
+    margin-top: 10%;
+
+    display: flex;
+    flex-direction: column;
+  }
+
+  form select {
+    width: 60%;
+    padding-block: 1.5%;
+    border: 0.5px solid #51473d;
+    font-size: var(--font-size-p);
+
+    text-align: center;
+    margin-bottom: 2.5%;
+  }
+
+  .description {
+    margin-top: 100px;
+  }
+
+  .tekst1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .andreProdukter {
+    margin-top: 100px;
+  }
+
+  .grid_3-1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    gap: 10%;
+  }
+
+  .lemon img {
+    width: 100%;
+    height: 75%;
+    display: block;
+  }
+
+  .vase img {
+    width: 100%;
+    height: 75%;
+    display: block;
+  }
+
+  .bowl img {
+    width: 100%;
+    height: 75%;
+    display: block;
+  }
+</style>
+
+<!-- id: 1,
+created_at: '2023-05-20T14:17:10+00:00',
+name: 'Grey mug with dimples',
+price: 245,
+description: 'Kopperne fås i tre forskellige farvesammensætninger og med fordybninger eller hank, så de passer ind i ethvert hjem.\n' +
+  '\n' +
+  'Produktet tåler opvaskemaskine og mikrobølgeovn.',
+image: 'mug_grey.webp',
+tags: 'mug',
+slug: 'grey-mug-with-dimples' -->

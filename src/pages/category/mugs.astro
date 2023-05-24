@@ -13,18 +13,59 @@ const options = {
   },
 };
 
-const data = await fetch(url, options).then((res) => res.json());
+const response = await fetch(url, options);
+const data = await response.json();
 
 import MainLayout from "../../layouts/MainLayout.astro";
-import Mug from "../../components/Mug.astro";
+import Card from "../../components/Card.astro";
 ---
 
-<MainLayout>
+<MainLayout title="Produkter">
+  <section class="category">
+    <h1>Mugs</h1>
+    <p><a href="/kategori">Alle produkter</a> / <span>Mugs</span></p>
+  </section>
   <section class="grid_3-auto">
-    {
-      data.map((mug) => {
-        return <Mug data={mug} />;
-      })
-    }
+    {data.map((mug) => <Card image={`/images/${mug.image}`} name={mug.name} price={mug.price} slug={mug.slug} />)}
   </section>
 </MainLayout>
+
+<style>
+  section {
+    margin-top: 200px;
+    max-width: 90%;
+    margin-inline: auto;
+  }
+
+  .category {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  h1 {
+    margin-bottom: 5%;
+  }
+
+  p {
+    text-transform: uppercase;
+  }
+
+  span {
+    font-family: "NeueHaasMedium", sans-serif;
+    font-weight: 800;
+  }
+
+  a {
+    color: var(--dark-brown);
+  }
+
+  .grid_3-auto {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    gap: 10%;
+
+    height: 1200px;
+  }
+</style>

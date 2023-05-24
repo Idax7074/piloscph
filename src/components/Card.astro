@@ -1,0 +1,44 @@
+---
+const { image, name, price, slug } = Astro.props;
+---
+
+<a href={`../produkt/${slug}`}>
+  <article>
+    <img src={image} alt="Produktbillede" />
+    <div>
+      <h2>{name}</h2>
+      <p>{price} DKK</p>
+    </div>
+  </article>
+</a>
+
+<style>
+  article {
+    display: flex;
+    flex-direction: column;
+  }
+
+  article img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  article img:hover {
+    filter: grayscale(100);
+  }
+
+  a h2 {
+    font-size: var(--font-small);
+    font-family: "NeueHaasMedium", sans-serif;
+  }
+
+  a p {
+    font-size: var(--font-smaller);
+    font-family: "NeueHaasLight", sans-serif;
+  }
+
+  a {
+    color: var(--dark-brown);
+  }
+</style>
