@@ -207,8 +207,8 @@ import Logo from "./Logo.astro";
       padding: 2rem;
 
       display: flex;
-      flex-flow: wrap;
       justify-content: space-between;
+      flex-wrap: wrap;
       align-items: center;
       gap: 20px 40px;
     }
@@ -279,4 +279,10 @@ import Logo from "./Logo.astro";
       transform: translate(0, -11px) rotate(45deg);
     }
   }
+
+  @media (max-width:500px){
+    .banner {
+      padding-block: 1rem;
+      padding-inline: 0.1rem;
+  } 
 </style>

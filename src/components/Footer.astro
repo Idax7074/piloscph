@@ -126,4 +126,32 @@ import Button from "../components/Button.astro";
 
     margin-block: 30px;
   }
+
+  @media (max-width: 1200px) {
+    .footer {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr;
+      gap: 5%;
+      row-gap: 10%;
+    }
+
+    .col_1 {
+      grid-column: span 2;
+    }
+
+    .col_2 > * {
+      font-size: var(--font-small);
+      color: var(--dark-brown);
+    }
+
+    .col_3 a {
+      font-size: var(--font-small);
+      color: var(--dark-brown);
+    }
+
+    .col_4 {
+      grid-column: span 2;
+    }
+  }
 </style>

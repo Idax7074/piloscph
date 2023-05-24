@@ -86,8 +86,6 @@ import "../styles/style.css";
   }
 
   .button {
-    /* display: flex;
-    justify-content: center; */
     margin-top: 100px;
   }
 
@@ -130,5 +128,30 @@ import "../styles/style.css";
   .grid_4-2 img {
     width: 95%;
     height: 95%;
+  }
+
+  @media (max-width: 1200px) {
+    .om {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 5%;
+    }
+
+    .om h1 {
+      margin-bottom: 50px;
+    }
+
+    .om img {
+      width: 100%;
+      height: auto;
+    }
+
+    .om p {
+      margin-bottom: 15px;
+    }
+
+    .button {
+      margin-top: 50px;
+    }
   }
 </style>
