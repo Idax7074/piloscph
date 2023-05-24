@@ -3,35 +3,41 @@ import Logo from "../components/Logo.astro";
 import Button from "../components/Button.astro";
 ---
 
-<footer class="footer">
-  <div class="col_1">
-    <a href="/"><img src="/logo.svg" alt="" /></a>
-    <div class="social-links">
-      <i class="fab fa-instagram"></i>
-      <i class="fab fa-facebook"></i>
+<footer>
+  <div class="footer">
+    <div class="col_1">
+      <a href="/"><img src="/logo.svg" alt="" /></a>
+      <div class="social-links">
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-facebook"></i>
+      </div>
+    </div>
+    <div class="col_2">
+      <a href="mailto:Kontakt@piloscph.dk">kontakt@piloscph.dk</a>
+      <p>CVR. 41565467</p>
+      <p>Rantzausgade 25</p>
+      <p>2200 KBH N</p>
+    </div>
+    <div class="col_3">
+      <a href="/">Forside</a>
+      <a href="/about">Om mig</a>
+      <a href="#">FAQ</a>
+      <a href="#">Handelsbetingelser</a>
+      <a href="#">Personpolitik</a>
+      <a href="/kontakt">Kontakt</a>
+    </div>
+    <div class="col_4">
+      <h3>Tilmeld dig og modtag seneste nyheder</h3>
+      <form>
+        <input type="email" placeholder="Piloscph@gmail.com" required />
+        <br />
+        <Button variant="primary">Tilmeld</Button>
+      </form>
     </div>
   </div>
-  <div class="col_2">
-    <a href="mailto:Kontakt@piloscph.dk">kontakt@piloscph.dk</a>
-    <p>CVR. 41565467</p>
-    <p>Rantzausgade 25</p>
-    <p>2200 KBH N</p>
-  </div>
-  <div class="col_3">
-    <a href="/">Forside</a>
-    <a href="/about">Om mig</a>
-    <a href="#">FAQ</a>
-    <a href="#">Handelsbetingelser</a>
-    <a href="#">Personpolitik</a>
-    <a href="/kontakt">Kontakt</a>
-  </div>
-  <div class="col_4">
-    <h3>Tilmeld dig og modtag seneste nyheder</h3>
-    <form>
-      <input type="email" placeholder="Piloscph@gmail.com" required />
-      <br />
-      <Button variant="primary">Tilmeld</Button>
-    </form>
+  <div class="designby">
+    <p>Copyright © 2023 Piloscph</p>
+    <p>Web design by RESI</p>
   </div>
 </footer>
 
@@ -39,11 +45,25 @@ import Button from "../components/Button.astro";
   footer {
     width: 100%;
     background-color: var(--lightest_brown);
-    padding-block: 5%;
+    padding-top: 5%;
+    padding-bottom: 2%;
     margin-top: 100px;
-
+  }
+  .footer {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 2fr;
+  }
+
+  .designby {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-top: 50px;
+  }
+
+  .designby p {
+    font-size: var(--font-smaller);
   }
 
   img {
@@ -68,7 +88,7 @@ import Button from "../components/Button.astro";
   }
 
   .col_2 > * {
-    font-size: var(--font-small);
+    font-size: var(--font-p);
     color: var(--dark-brown);
   }
 
@@ -82,7 +102,7 @@ import Button from "../components/Button.astro";
   }
 
   .col_3 a {
-    font-size: var(--font-small);
+    font-size: var(--font-p);
     color: var(--dark-brown);
     text-transform: capitalize;
   }

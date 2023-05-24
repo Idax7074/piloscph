@@ -35,7 +35,7 @@ import Button from "../components/Button.astro";
     <img class="left" src="/iconer/pillar.svg" alt="pillar svg" />
     <div class="programmet">
       <h2>Kursus program</h2>
-      <ul>
+      <ul class="dag">
         <li>Dag 1: Intro til centrering & den simple form</li>
         <li>Dag 2: Afdrejning & drej den simple form</li>
         <li>Dag 3: Afdrejning, drej simple former & blinddrejning</li>
@@ -55,38 +55,52 @@ import Button from "../components/Button.astro";
   </section>
   <section class="tilmelding">
     <h2>Tilmelding</h2>
-    <div class="">
-      <form action="registration_form" class="form">
-        <label for="name:">Navn:</label>
-        <input type="text" id="name" name="name" />
-        <label for="mail">Email:</label>
-        <input type="text" id="mail" name="mail" />
-        <label for="number">Tlf:</label>
-        <input type="text" id="phone" name="phone" />
-      </form>
-      <div class="">
-        <label for="opstart">Hold opstart:</label>
-        <select name="start" id="start" form="start">
-          <option value="juni">1/6 2023</option>
-          <option value="august">1/8 2023</option>
-          <option value="oktober">1/10 2023</option>
-          <option value="december">1/12 2023</option>
-        </select>
-        <label for="antal">Antal:</label>
-        <select name="antal" id="antal" form="antal">
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-        </select>
+    <form action="registration_form" class="form">
+      <div class="yourInfo">
+        <label for="name:"
+          >Navn:
+          <input type="text" id="name" name="name" placeholder="Helle" /></label
+        >
+        <label for="mail"
+          >Email:
+          <input type="text" id="mail" name="mail" placeholder="Hellejensen@gmail.com" /></label
+        >
+        <label for="number"
+          >Tlf:
+          <input type="text" id="phone" name="phone" placeholder="76281930" /></label
+        >
       </div>
-    </div>
+      <div class="">
+        <label for="opstart"
+          >Hold opstart:
+          <select name="start" id="start" form="start">
+            <option value="juni">1/6 2023</option>
+            <option value="august">1/8 2023</option>
+            <option value="oktober">1/10 2023</option>
+            <option value="december">1/12 2023</option>
+          </select></label
+        >
+        <label for="antal"
+          >Antal:
+          <select name="antal" id="antal" form="antal">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select></label
+        >
+        <p>Bemærk: Hvis i er flere sammen skal i blot skrive antallet i feltet for at komme på samme hold, dog max 4 pers.</p>
+      </div>
+      <div class="">
+        <Button variant="secondary">Tilmeld</Button>
+      </div>
+    </form>
   </section>
 </MainLayout>
 
 <style>
   section {
-    margin-top: 200px;
+    margin-top: 100px;
 
     max-width: 90%;
     margin-inline: auto;
@@ -97,9 +111,18 @@ import Button from "../components/Button.astro";
     height: 100%;
   }
   .info {
-    margin-top: 150px;
+    margin-top: 200px;
   }
 
+  .dag {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .dag li {
+    padding-block: 2%;
+  }
   .info h1 {
     display: flex;
     justify-content: center;
@@ -197,10 +220,48 @@ import Button from "../components/Button.astro";
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    max-width: 800px;
+  }
+
+  .tilmelding h2 {
+    margin-bottom: 5%;
   }
 
   .form {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    gap: 5%;
+  }
+
+  form label {
+    display: flex;
+    flex-direction: column;
+
+    padding-block: 2%;
+  }
+
+  form input {
+    width: 100%;
+    height: auto;
+
+    padding-block: 1.5%;
+  }
+
+  form select {
+    width: 100%;
+    height: auto;
+
+    padding-block: 1.5%;
+    background-color: var(--white);
+    outline: none;
+    border: 1px solid #51473d;
+    font-size: var(--font-p);
+    color: var(--dark-brown);
+  }
+
+  .yourInfo {
+    display: flex;
+    flex-direction: column;
   }
 </style>
