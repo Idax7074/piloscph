@@ -1,12 +1,13 @@
 ---
-import Logo from "../components/Logo.astro";
 import Button from "../components/Button.astro";
+import Logo from "../components/Logo.astro";
 ---
 
 <footer>
   <div class="footer">
     <div class="col_1">
-      <a href="/"><img src="/logo.svg" alt="" /></a>
+      <Logo />
+      <!-- <a href="/"><img src="/logo.svg" alt="" /></a> -->
       <div class="social-links">
         <i class="fab fa-instagram"></i>
         <i class="fab fa-facebook"></i>
@@ -127,7 +128,11 @@ import Button from "../components/Button.astro";
     margin-block: 30px;
   }
 
-  @media (max-width: 1200px) {
+  form input {
+    padding-left: 10px;
+  }
+
+  @media (max-width: 900px) {
     .footer {
       display: grid;
       grid-template-columns: 1fr 1fr;

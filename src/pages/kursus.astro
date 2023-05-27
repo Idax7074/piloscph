@@ -25,7 +25,7 @@ import Button from "../components/Button.astro";
         <li><i>Te & kaffe inkluderet</i></li>
       </ul>
     </div>
-    <div class="grid_1-1">
+    <div class="billeder">
       <img src="/images/in_the_making2.webp" alt="in the making" />
       <img src="/images/in_the_making3.webp" alt="in the making" />
     </div>
@@ -91,7 +91,7 @@ import Button from "../components/Button.astro";
         >
         <p>Bemærk: Hvis i er flere sammen skal i blot skrive antallet i feltet for at komme på samme hold, dog max 4 pers.</p>
       </div>
-      <div class="">
+      <div class="button">
         <Button variant="secondary">Tilmeld</Button>
       </div>
     </form>
@@ -114,12 +114,6 @@ import Button from "../components/Button.astro";
     margin-top: 200px;
   }
 
-  .dag {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
   .dag li {
     padding-block: 2%;
   }
@@ -127,10 +121,18 @@ import Button from "../components/Button.astro";
     display: flex;
     justify-content: center;
 
-    margin-bottom: 100px;
+    margin-bottom: 10%;
   }
 
   .grid_1-1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5%;
+
+    margin-bottom: 70px;
+  }
+
+  .billeder {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 5%;
@@ -246,6 +248,7 @@ import Button from "../components/Button.astro";
     height: auto;
 
     padding-block: 1.5%;
+    padding-left: 10px;
   }
 
   form select {
@@ -256,12 +259,109 @@ import Button from "../components/Button.astro";
     background-color: var(--white);
     outline: none;
     border: 1px solid #51473d;
-    font-size: var(--font-p);
+    font-size: var(--font-small);
     color: var(--dark-brown);
   }
 
   .yourInfo {
     display: flex;
     flex-direction: column;
+  }
+
+  @media (max-width: 1200px) {
+    section {
+      margin-top: 70px;
+    }
+
+    .info {
+      margin-top: 120px;
+    }
+    .grid_1-1 {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr;
+
+      margin-bottom: 10%;
+    }
+
+    .billeder {
+      margin-bottom: 0px;
+    }
+
+    .left {
+      display: none;
+    }
+
+    .right {
+      display: none;
+    }
+
+    .program {
+      grid-template-columns: 1fr 2fr 1fr;
+    }
+
+    .programmet {
+      padding-top: 100px;
+
+      grid-column: 2;
+    }
+
+    .border {
+      margin-inline: 50px;
+
+      margin-bottom: 0px;
+    }
+
+    .border-bottom {
+      margin-inline: 50px;
+    }
+  }
+
+  @media (max-width: 900px) {
+  }
+
+  @media (max-width: 400px) {
+    section {
+      margin-top: 70px;
+    }
+
+    .info {
+      margin-top: 100px;
+    }
+
+    .grid_1-1 {
+      grid-template-rows: 2fr 1fr;
+    }
+
+    .border {
+      margin-top: 70px;
+    }
+    .program {
+      grid-template-columns: 1fr 5fr 1fr;
+    }
+
+    .programmet {
+      padding-top: 70px;
+    }
+
+    h2 {
+      display: flex;
+      text-align: center;
+    }
+    .tilmelding {
+      max-width: 350px;
+    }
+    .form {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr;
+    }
+
+    .button {
+      display: flex;
+      justify-content: center;
+    }
+
+    .info h1 {
+      margin-bottom: 20%;
+    }
   }
 </style>

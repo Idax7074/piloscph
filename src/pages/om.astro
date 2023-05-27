@@ -80,14 +80,14 @@ import MainLayout from "../layouts/MainLayout.astro";
   .om_mig {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 10%;
+    gap: 5%;
 
     padding-bottom: 100px;
-    border-bottom: 1px solid black;
+    border-bottom: 4px solid #f3f0ec;
   }
 
   .om_mig h1 {
-    margin-bottom: 100px;
+    margin-bottom: 10%;
   }
 
   .baeredygtig h2 {
@@ -106,7 +106,7 @@ import MainLayout from "../layouts/MainLayout.astro";
   }
 
   .ler {
-    border: 1px solid black;
+    border: 4px solid #f3f0ec;
 
     padding: 8%;
   }
@@ -120,5 +120,35 @@ import MainLayout from "../layouts/MainLayout.astro";
     justify-content: center;
 
     margin-bottom: 50px;
+  }
+
+  @media (max-width: 900px) {
+    .om_mig {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr;
+    }
+
+    .grid_1-1 {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr;
+    }
+
+    .ler-tekst {
+      padding-inline: 10px;
+    }
+  }
+
+  @media (max-width: 400px) {
+    section {
+      margin-top: 70px;
+    }
+
+    .om_mig {
+      grid-template-rows: 2fr 1fr;
+    }
+
+    .om_mig h1 {
+      margin-bottom: 20%;
+    }
   }
 </style>

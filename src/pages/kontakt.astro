@@ -12,18 +12,18 @@ import Button from "../components/Button.astro";
       <form name="contact">
         <div class="">
           <label for="navn"
-            >Navn
-            <input type="text" id="navn" name="navn" placeholder="Sofie" /></label
+            >Fulde navn
+            <input type="text" id="navn" name="navn" placeholder="Emilie Hansen" /></label
           >
 
           <label for="email"
             >Email
-            <input type="email" id="email" name="email" placeholder="sofiehansen@gmail.com" /></label
+            <input type="email" id="email" name="email" placeholder="emiliehansen@gmail.com" /></label
           >
 
           <label for="telefon"
-            >Telf. nr
-            <input type="text" id="telefon" name="telefon" placeholder="12345678" /></label
+            >Tlf. nr
+            <input type="text" id="telefon" name="telefon" placeholder="39017438" /></label
           >
         </div>
         <div class="">
@@ -32,7 +32,7 @@ import Button from "../components/Button.astro";
             <textarea name="besked" id="besked" cols="30" rows="10"></textarea></label
           >
         </div>
-        <div class="">
+        <div class="button">
           <Button variant="secondary">Indsend</Button>
         </div>
       </form>
@@ -62,21 +62,16 @@ import Button from "../components/Button.astro";
     margin-top: 200px;
   }
 
-  .kontakt h1 {
+  h1 {
     display: flex;
     justify-content: center;
 
-    margin-bottom: 100px;
-  }
-
-  .tekst {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10%;
+    margin-bottom: 10%;
   }
 
   .tekst p {
-    margin-top: 3%;
+    margin-top: 2.5%;
+    margin-bottom: 2%;
   }
 
   .grid_1-1-1 {
@@ -103,6 +98,11 @@ import Button from "../components/Button.astro";
     height: auto;
 
     padding-block: 1.5%;
+    padding-left: 10px;
+  }
+
+  form textarea {
+    height: 245px;
   }
 
   form select {
@@ -113,7 +113,53 @@ import Button from "../components/Button.astro";
     background-color: var(--white);
     outline: none;
     border: 1px solid #51473d;
-    font-size: var(--font-p);
+    font-size: var(--font-small);
     color: var(--dark-brown);
+  }
+
+  @media (max-width: 1200px) {
+    form textarea {
+      height: 215px;
+    }
+
+    .kontakt h1 {
+      margin-bottom: 50px;
+    }
+
+    .kontakt {
+      margin-top: 100px;
+    }
+  }
+
+  @media (max-width: 900px) {
+    form textarea {
+      height: 190px;
+    }
+  }
+
+  @media (max-width: 400px) {
+    section {
+      margin-top: 70px;
+    }
+
+    .kontakt {
+      margin-top: 100px;
+    }
+
+    form {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr;
+
+      max-width: 350px;
+    }
+
+    .button {
+      display: flex;
+      justify-content: center;
+    }
+
+    h1 {
+      margin-bottom: 20%;
+    }
   }
 </style>

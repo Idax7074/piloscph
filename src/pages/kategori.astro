@@ -134,7 +134,7 @@ import Card from "../components/Card.astro";
 
   .produkter h1 {
     text-align: center;
-    margin-bottom: 100px;
+    margin-bottom: 10%;
   }
 
   .grid_3-auto {
@@ -150,5 +150,35 @@ import Card from "../components/Card.astro";
     width: 100%;
     height: auto;
     display: block;
+  }
+
+  @media (max-width: 1200px) {
+    .underkategori {
+      margin-top: 120px;
+    }
+
+    .grid_3-auto {
+      height: 1900px;
+    }
+  }
+
+  @media (max-width: 400px) {
+    section {
+      margin-top: 70px;
+    }
+
+    .underkategori {
+      max-width: 300px;
+
+      margin-top: 100px;
+    }
+    img {
+      width: 130%;
+    }
+
+    .grid_3-auto {
+      grid-template-columns: 1fr 1fr;
+      height: 1500px;
+    }
   }
 </style>

@@ -17,10 +17,13 @@
   --black: #252525;
 
   /*Typografi*/
-  --font-h1: 2.813rem;
-  --font-p: 1.25rem;
-  --font-small: 1rem;
-  --font-smaller: 0.938rem;
+  --font-h1: 2.5rem;
+  --font-h2: 2rem;
+  --font-h3: 1.5rem;
+  --font-a: 1.25rem;
+  --font-p: 1.1rem;
+  --font-small: 0.9rem;
+  --font-smaller: 0.7rem;
 }
 
 @font-face {
@@ -59,19 +62,20 @@ h2 {
   font-family: "quiche-sans", sans-serif;
   font-weight: 500;
   font-style: normal;
+  font-size: var(--font-h2);
+  color: var(--black);
 }
 
 h3 {
   font-family: "quiche-sans", sans-serif;
   font-weight: 500;
   font-style: normal;
+  font-size: var(--font-h3);
+  color: var(--black);
 }
-
-/* span {
-  font-family: "NeueHaasMedium", sans-serif;
-} */
 
 a {
   font-family: "NeueHaasLight", sans-serif;
   text-decoration: none;
+  font-size: var(--font-a);
 }

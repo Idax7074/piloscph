@@ -22,19 +22,25 @@ import "../styles/style.css";
   </section>
   <section class="produkter">
     <div class="image_1">
-      <img src="/images/mug_brown.webp" alt="mugs" />
-      <p>Beige mug</p>
-      <span>249,00 DKK</span>
+      <a href="#">
+        <img src="/images/mug_brown.webp" alt="mugs" />
+        <p>Beige mug</p>
+        <span>249,00 DKK</span>
+      </a>
     </div>
     <div class="image_2">
-      <img src="/images/round_vase_brown.webp" alt="vase" />
-      <p>Beige stor vase</p>
-      <span>1600,00 DKK</span>
+      <a href="#">
+        <img src="/images/round_vase_brown.webp" alt="vase" />
+        <p>Beige stor vase</p>
+        <span>1600,00 DKK</span>
+      </a>
     </div>
     <div class="image_3">
-      <img src="/images/bowl4.webp" alt="bowls" />
-      <p>Salat bowl</p>
-      <span>800,00 DKK</span>
+      <a href="#">
+        <img src="/images/bowl4.webp" alt="bowls" />
+        <p>Salat bowl</p>
+        <span>800,00 DKK</span>
+      </a>
     </div>
   </section>
   <section class="instagram">
@@ -69,11 +75,17 @@ import "../styles/style.css";
   .om {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 10%;
+    gap: 5%;
   }
 
-  .om h1 {
-    margin-bottom: 100px;
+  .tekst {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  h1 {
+    margin-bottom: 10%;
   }
 
   .om img {
@@ -81,12 +93,8 @@ import "../styles/style.css";
     height: auto;
   }
 
-  .om p {
-    margin-bottom: 15px;
-  }
-
   .button {
-    margin-top: 100px;
+    margin-top: 70px;
   }
 
   .produkter {
@@ -100,8 +108,9 @@ import "../styles/style.css";
     height: 82%;
   }
 
-  .produkter p {
+  .produkter a {
     font-size: var(--font-small);
+    color: var(--black);
   }
 
   .produkter span {
@@ -132,8 +141,8 @@ import "../styles/style.css";
 
   @media (max-width: 1200px) {
     .om {
-      grid-template-columns: 1fr;
-      grid-template-rows: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr;
       gap: 5%;
     }
 
@@ -152,6 +161,32 @@ import "../styles/style.css";
 
     .button {
       margin-top: 50px;
+    }
+  }
+
+  @media (max-width: 400px) {
+    section {
+      margin-top: 70px;
+    }
+
+    .om {
+      grid-template-rows: 2fr 1fr;
+    }
+
+    .produkter {
+      grid-template-columns: 1fr;
+    }
+
+    .image_2 {
+      display: none;
+    }
+
+    .image_3 {
+      display: none;
+    }
+
+    h1 {
+      margin-bottom: 20%;
     }
   }
 </style>

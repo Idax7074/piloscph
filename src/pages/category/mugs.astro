@@ -44,7 +44,7 @@ import Card from "../../components/Card.astro";
   }
 
   h1 {
-    margin-bottom: 5%;
+    margin-bottom: 10%;
   }
 
   p {
@@ -67,5 +67,31 @@ import Card from "../../components/Card.astro";
     gap: 10%;
 
     height: 1200px;
+  }
+
+  @media (max-width: 1200px) {
+    section {
+      margin-top: 120px;
+    }
+
+    .grid_3-auto {
+      height: 1000px;
+    }
+  }
+
+  @media (max-width: 400px) {
+    section {
+      margin-top: 100px;
+    }
+
+    .grid_3-auto {
+      grid-template-columns: 1fr 1fr;
+
+      height: 800px;
+    }
+
+    h1 {
+      margin-bottom: 20%;
+    }
   }
 </style>

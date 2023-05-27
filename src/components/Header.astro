@@ -4,9 +4,7 @@ import Logo from "./Logo.astro";
 
 <header class="banner">
   <div class="logo">
-    <a href="/">
       <Logo />
-    </a>
   </div>
   <nav class="menu">
     <button class="toggle-btn">
@@ -30,13 +28,13 @@ import Logo from "./Logo.astro";
       <li><a href="/kontakt">Kontakt</a></li>
     </ul>
     <ul class="shopMenu">
-      <li><a href="#"><i class="fas fa-user"></i></a></li>
-      <li><a href="#"><i class="fas fa-shopping-basket"></i></a></li>
+      <li><i class="fas fa-user"></i></li>
+      <li><i class="fas fa-shopping-basket"></i></li>
     </ul>
   </nav>
   <ul class="shop">
-    <li><a href="#"><i class="fas fa-user"></i></a></li>
-    <li><a href="#"><i class="fas fa-shopping-basket"></i></a></li>
+    <li><i class="fas fa-user"></i></li>
+    <li><i class="fas fa-shopping-basket"></i></li>
   </ul>
 </header>
 
@@ -46,7 +44,7 @@ import Logo from "./Logo.astro";
   header {
     top: 0;
     width: 100%;
-    background-image: linear-gradient(#d0c7be, #d0c7be, transparent);
+    background-image: linear-gradient(#d0c7be 25%, 75%, transparent);
     padding: 20px;
     z-index: 4;
 
@@ -55,8 +53,13 @@ import Logo from "./Logo.astro";
     align-items: center;
   }
 
-  a {
+  .shop a {
     text-transform: uppercase;
+    color: var(--dark-brown);
+  }
+
+  .shop a:hover {
+    color: var(--black);
   }
 
   img {
@@ -81,14 +84,6 @@ import Logo from "./Logo.astro";
   .shop li {
     padding-inline: 20px;
     list-style: none;
-  }
-
-  .shop a {
-    color: var(--black);
-  }
-
-  .shop a:hover {
-    color: #a08572;
   }
 
   @media (min-width: 1201px) {
@@ -124,14 +119,14 @@ import Logo from "./Logo.astro";
 
     #submenu a {
       background-color: #f3f0ec;
-      color: var(--black);
+      color: var(--dark-brown);
 
       display: flex;
       justify-content: center;
     }
 
     #submenu a:hover {
-      color: #a08572;
+      color: var(--black);
     }
 
     nav {
@@ -155,14 +150,19 @@ import Logo from "./Logo.astro";
     }
 
     nav li:hover a {
-      color: #a08572;
+      color: var(--black);
     }
 
     nav a {
-      color: var(--black);
+      color: var(--dark-brown);
       display: block;
       padding: 15px 70px;
       transition: all 0.25s ease;
+      text-transform: uppercase;
+    }
+
+    nav a:active {
+      color: var(--black);
     }
 
     .shop {
@@ -177,12 +177,13 @@ import Logo from "./Logo.astro";
       list-style: none;
     }
 
-    .shop a {
+    .shop li {
       color: var(--black);
+      cursor: pointer;
     }
 
-    .shop a:hover {
-      color: #a08572;
+    .shop li:hover {
+      cursor: pointer;
     }
 
     .shopMenu {
@@ -195,12 +196,13 @@ import Logo from "./Logo.astro";
       display: none;
     }
 
-    .shopMenu a {
+    .shopMenu li {
       color: var(--black);
+      cursor: pointer;
     }
 
-    .shopMenu a:hover {
-      color: #a08572;
+    .shopMenu li:hover {
+      cursor: pointer;
     }
     .banner {
       background-color: #d0c7be;
@@ -217,14 +219,14 @@ import Logo from "./Logo.astro";
       margin-left: 15px;
     }
     .menu.shown a {
-      color: var(--black);
+      color: var(--dark-brown);
       text-decoration: none;
       text-transform: uppercase;
       line-height: 1.5rem;
     }
 
     .menu.shown a:hover {
-      color: #a08572;
+      color: var(--black);
     }
 
     .toggle-btn {
