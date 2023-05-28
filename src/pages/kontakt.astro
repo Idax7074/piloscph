@@ -10,23 +10,23 @@ import Button from "../components/Button.astro";
     <div class="tekst">
       <p>Her kan du komme i kontakt med os, hvis du har spørgsmål omkring produkter, samarbejde, bestillinger mm.</p>
       <form name="contact">
-        <div class="">
+        <div class="input-felter">
           <label for="navn"
             >Fulde navn
-            <input type="text" id="navn" name="navn" placeholder="Emilie Hansen" /></label
+            <input type="text" id="navn" name="navn" placeholder="Helle Jensen" /></label
           >
 
           <label for="email"
             >Email
-            <input type="email" id="email" name="email" placeholder="emiliehansen@gmail.com" /></label
+            <input type="email" id="email" name="email" placeholder="hellejensen@gmail.com" /></label
           >
 
           <label for="telefon"
             >Tlf. nr
-            <input type="text" id="telefon" name="telefon" placeholder="39017438" /></label
+            <input type="text" id="telefon" name="telefon" placeholder="12345678" /></label
           >
         </div>
-        <div class="">
+        <div class="besked-felt">
           <label for="andet"
             >Skriv en besked her...
             <textarea name="besked" id="besked" cols="30" rows="10"></textarea></label
@@ -71,7 +71,8 @@ import Button from "../components/Button.astro";
 
   .tekst p {
     margin-top: 2.5%;
-    margin-bottom: 2%;
+    margin-bottom: 5%;
+    text-align: center;
   }
 
   .grid_1-1-1 {
@@ -96,13 +97,13 @@ import Button from "../components/Button.astro";
   form input {
     width: 100%;
     height: auto;
-
     padding-block: 1.5%;
     padding-left: 10px;
   }
 
   form textarea {
-    height: 245px;
+    height: 180px;
+    width: 60%;
   }
 
   form select {
@@ -115,6 +116,14 @@ import Button from "../components/Button.astro";
     border: 1px solid #51473d;
     font-size: var(--font-small);
     color: var(--dark-brown);
+  }
+
+  .input-felter {
+    margin-left: 40%;
+  }
+  .button {
+    margin-left: 90%;
+    margin-top: 5%;
   }
 
   @media (max-width: 1200px) {
