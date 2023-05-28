@@ -78,12 +78,6 @@ import "../styles/style.css";
     gap: 5%;
   }
 
-  .tekst {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
   h1 {
     margin-bottom: 10%;
   }
@@ -164,13 +158,24 @@ import "../styles/style.css";
     }
   }
 
+  @media (min-width: 901px) {
+    .tekst {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .om {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 2fr;
+    }
+  }
+
   @media (max-width: 400px) {
     section {
       margin-top: 70px;
-    }
-
-    .om {
-      grid-template-rows: 2fr 1fr;
     }
 
     .produkter {

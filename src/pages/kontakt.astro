@@ -60,6 +60,10 @@ import Button from "../components/Button.astro";
 
   .kontakt {
     margin-top: 200px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   h1 {
@@ -70,9 +74,7 @@ import Button from "../components/Button.astro";
   }
 
   .tekst p {
-    margin-top: 2.5%;
     margin-bottom: 5%;
-    text-align: center;
   }
 
   .grid_1-1-1 {
@@ -103,7 +105,7 @@ import Button from "../components/Button.astro";
 
   form textarea {
     height: 180px;
-    width: 60%;
+    width: 100%;
   }
 
   form select {
@@ -118,17 +120,9 @@ import Button from "../components/Button.astro";
     color: var(--dark-brown);
   }
 
-  .input-felter {
-    margin-left: 40%;
-  }
-  .button {
-    margin-left: 90%;
-    margin-top: 5%;
-  }
-
   @media (max-width: 1200px) {
     form textarea {
-      height: 215px;
+      height: 185px;
     }
 
     .kontakt h1 {
@@ -142,7 +136,7 @@ import Button from "../components/Button.astro";
 
   @media (max-width: 900px) {
     form textarea {
-      height: 190px;
+      height: 180px;
     }
   }
 
