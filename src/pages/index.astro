@@ -155,7 +155,24 @@ import "../styles/style.css";
     height: 95%;
   }
 
+  @media (max-width: 1400px) {
+    .left-center p {
+      font-size: 3rem;
+    }
+
+    .bottom {
+      left: 29%;
+    }
+  }
+
   @media (max-width: 1200px) {
+    .left-center p {
+      font-size: 2.5rem;
+    }
+
+    .bottom {
+      left: 25.5%;
+    }
     .om {
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 1fr;
@@ -193,9 +210,38 @@ import "../styles/style.css";
       grid-template-columns: 1fr;
       grid-template-rows: 1fr 2fr;
     }
+
+    .left-center p {
+      font-size: 2rem;
+    }
+
+    .bottom {
+      left: 22%;
+    }
+
+    h1 {
+      display: flex;
+      justify-content: center;
+    }
   }
 
   @media (max-width: 400px) {
+    .left-center p {
+      font-size: 0.85rem;
+    }
+
+    .bottom {
+      left: 22%;
+      top: 65%;
+    }
+
+    .bottom a {
+      font-size: 0.5rem;
+    }
+
+    .button a {
+      font-size: 0.7rem;
+    }
     .om {
       grid-template-columns: 1fr;
       grid-template-rows: 3fr 2fr;
