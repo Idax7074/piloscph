@@ -3,18 +3,18 @@
 
 /*eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNqb2dqZ25uZXpnZnBrYWh3b3JyIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODQzOTUwNTQsImV4cCI6MTk5OTk3MTA1NH0.vWMUEXcwFWRZ1s2ukS1uPY9qj2Rglhz-eEeRLppRxt0 */
 
+//Lav variablen "url" med vores URL fra supabase
 const url = "https://sjogjgnnezgfpkahworr.supabase.co/rest/v1/piloscph_produkter?tags=eq.mug";
+
+//Lav variablen "api" med vores api nøgle
 const api = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNqb2dqZ25uZXpnZnBrYWh3b3JyIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODQzOTUwNTQsImV4cCI6MTk5OTk3MTA1NH0.vWMUEXcwFWRZ1s2ukS1uPY9qj2Rglhz-eEeRLppRxt0";
 
-const options = {
+const data = await fetch(url, {
   method: "GET",
   headers: {
     apikey: api,
   },
-};
-
-const response = await fetch(url, options);
-const data = await response.json();
+}).then((res) => res.json());
 
 import MainLayout from "../../layouts/MainLayout.astro";
 import Card from "../../components/Card.astro";
@@ -51,9 +51,14 @@ import Card from "../../components/Card.astro";
     text-transform: uppercase;
   }
 
+  a {
+    font-size: var(--font-p);
+  }
+
   span {
     font-family: "NeueHaasMedium", sans-serif;
     font-weight: 800;
+    font-size: var(--font-p);
   }
 
   a {
