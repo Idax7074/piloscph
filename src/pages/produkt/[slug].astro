@@ -23,8 +23,22 @@ export async function getStaticPaths() {
 
 const { mug } = Astro.props;
 
+//Lav variablen "url" med vores URL fra supabase
+const url = "https://sjogjgnnezgfpkahworr.supabase.co/rest/v1/piloscph_produkter?limit=3";
+
+//Lav variablen "api" med vores api nøgle
+const api = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNqb2dqZ25uZXpnZnBrYWh3b3JyIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODQzOTUwNTQsImV4cCI6MTk5OTk3MTA1NH0.vWMUEXcwFWRZ1s2ukS1uPY9qj2Rglhz-eEeRLppRxt0";
+
+const data = await fetch(url, {
+  method: "GET",
+  headers: {
+    apikey: api,
+  },
+}).then((res) => res.json());
+
 import Mainlayout from "../../layouts/MainLayout.astro";
 import Button from "../../components/Button.astro";
+import Card from "../../components/Card.astro";
 ---
 
 <Mainlayout title="Produkter">
@@ -65,21 +79,7 @@ import Button from "../../components/Button.astro";
   <section class="andreProdukter">
     <h2>Andre produkter til din smag</h2>
     <div class="grid_3-1">
-      <div class="lemon">
-        <img src="/images/citronpresser_gul.webp" alt="" />
-        <p>Yellow lemon squeezer</p>
-        <p><span>320</span></p>
-      </div>
-      <div class="vase">
-        <img src="/images/small_vase_brown.webp" alt="" />
-        <p>Small black vase</p>
-        <p><span>150</span></p>
-      </div>
-      <div class="bowl">
-        <img src="/images/ramen_bowl_brown.webp" alt="" />
-        <p>Brown ramen bowl</p>
-        <p><span>395</span></p>
-      </div>
+      {data.map((mug) => <Card image={`/images/${mug.image}`} name={mug.name} price={mug.price} slug={mug.slug} />)}
     </div>
   </section>
 </Mainlayout>
@@ -172,7 +172,7 @@ import Button from "../../components/Button.astro";
     gap: 10%;
   }
 
-  @media (min-width: 1200px) {
+  @media (min-width: 1300px) {
     img {
       width: 110%;
     }
@@ -200,10 +200,6 @@ import Button from "../../components/Button.astro";
 
     .grid_1-1 {
       grid-template-rows: 2fr 3fr;
-    }
-
-    .grid_3-1 {
-      grid-template-columns: 1fr;
     }
 
     .lemon img {

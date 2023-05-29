@@ -9,8 +9,8 @@ import Logo from "../components/Logo.astro";
       <Logo />
       <!-- <a href="/"><img src="/logo.svg" alt="" /></a> -->
       <div class="social-links">
-        <i class="fab fa-instagram"></i>
-        <i class="fab fa-facebook"></i>
+        <a href="https://www.instagram.com/piloscph/"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
       </div>
     </div>
     <div class="col_2">
@@ -53,6 +53,15 @@ import Logo from "../components/Logo.astro";
   .footer {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 2fr;
+  }
+
+  .social-links i {
+    font-size: var(--font-h3);
+    margin-inline: 2%;
+  }
+
+  .social-links a {
+    color: var(--black);
   }
 
   .designby {

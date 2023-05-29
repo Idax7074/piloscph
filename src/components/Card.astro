@@ -30,15 +30,27 @@ const { image, name, price, slug } = Astro.props;
 
   a h2 {
     font-size: var(--font-small);
-    font-family: "NeueHaasMedium", sans-serif;
+    font-family: "NeueHaasLight", sans-serif;
+    font-weight: 500;
   }
 
   a p {
-    font-size: var(--font-smaller);
+    font-size: var(--font-small);
     font-family: "NeueHaasLight", sans-serif;
+    font-weight: 500;
   }
 
   a {
     color: var(--dark-brown);
+  }
+
+  @media (max-width: 400px) {
+    a h2 {
+      font-size: var(--font-smaller);
+    }
+
+    a p {
+      font-size: var(--font-smaller);
+    }
   }
 </style>

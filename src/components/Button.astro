@@ -2,13 +2,9 @@
 const { variant } = Astro.props;
 ---
 
-<a href="#"><button class={variant}><slot /></button></a>
+<button class={variant}><slot /></button>
 
 <style>
-  a button {
-    cursor: pointer;
-  }
-
   button {
     padding: 1rem 3.5rem;
     border: none;
