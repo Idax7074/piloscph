@@ -21,7 +21,6 @@ export async function getStaticPaths() {
   return pagesGenerate;
 }
 
-//const { id } = Astro.params;
 const { mug } = Astro.props;
 
 import Mainlayout from "../../layouts/MainLayout.astro";
@@ -39,6 +38,8 @@ import Button from "../../components/Button.astro";
         <h1>{mug.name}</h1>
         <p>{mug.price} DKK</p>
         <p>inkl. moms</p>
+        <h2>Information om produktet</h2>
+        <p class="tekst1">{mug.description}</p>
         <form action="antal">
           <label for="antal">Antal</label>
           <select name="antal" id="antal">
@@ -54,14 +55,12 @@ import Button from "../../components/Button.astro";
             <option value="10">10</option>
           </select>
           <br />
-          <Button variant="secondary">Tilføj til kurven</Button>
+          <div class="button">
+            <Button variant="secondary">Tilføj til kurven</Button>
+          </div>
         </form>
       </div>
     </div>
-  </section>
-  <section class="description">
-    <h2>Information om produktet</h2>
-    <p class="tekst1">{mug.description}</p>
   </section>
   <section class="andreProdukter">
     <h2>Andre produkter til din smag</h2>
@@ -104,10 +103,11 @@ import Button from "../../components/Button.astro";
   }
 
   h1 {
-    margin-bottom: 20%;
+    margin-bottom: 5%;
   }
 
   h2 {
+    margin-top: 10%;
     margin-bottom: 1.5%;
   }
 
@@ -118,12 +118,14 @@ import Button from "../../components/Button.astro";
   .breadcrumb a {
     text-transform: uppercase;
     color: var(--dark-brown);
+    font-size: var(--font-p);
   }
 
   .breadcrumb span {
     text-transform: uppercase;
     font-family: "NeueHaasMedium", sans-serif;
     font-weight: 800;
+    font-size: var(--font-p);
   }
 
   .grid_1-1 {
@@ -137,10 +139,6 @@ import Button from "../../components/Button.astro";
     margin-top: 100px;
   }
 
-  .tekst {
-    padding-top: 10%;
-  }
-
   form {
     margin-top: 10%;
 
@@ -149,18 +147,18 @@ import Button from "../../components/Button.astro";
   }
 
   form select {
-    width: 60%;
+    width: 36%;
     padding-block: 1.5%;
     border: 0.5px solid #51473d;
     font-size: var(--font-p);
 
     text-align: center;
-    margin-bottom: 2.5%;
+    margin-bottom: 2%;
   }
 
   .tekst1 {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 4fr 1fr;
   }
 
   .andreProdukter {
@@ -192,6 +190,20 @@ import Button from "../../components/Button.astro";
     display: block;
   }
 
+  @media (min-width: 1200px) {
+    img {
+      width: 110%;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    .grid_1-1 {
+      grid-template-columns: 1fr;
+      grid-template-rows: 3fr 2fr;
+      gap: 5%;
+    }
+  }
+
   @media (max-width: 400px) {
     .produktet {
       margin-top: 100px;
@@ -200,13 +212,12 @@ import Button from "../../components/Button.astro";
       margin-top: 70px;
     }
 
-    .grid_1-1 {
-      grid-template-columns: 1fr;
-      grid-template-rows: 1fr 2fr;
-    }
-
     .tekst1 {
       grid-template-columns: 1fr;
+    }
+
+    .grid_1-1 {
+      grid-template-rows: 2fr 3fr;
     }
 
     .grid_3-1 {
