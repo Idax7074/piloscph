@@ -61,43 +61,16 @@ import Card from "../components/Card.astro";
   .underkategori {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
     text-align: center;
+    gap: 5%;
 
     margin-top: 200px;
-    max-width: 500px;
-  }
-
-  .one {
-    grid-column: 2;
-    grid-row: 1;
-  }
-
-  .two {
-    grid-column: 4;
-    grid-row: 1;
-  }
-
-  .three {
-    grid-column: 1;
-    grid-row: 2;
-  }
-
-  .four {
-    grid-column: 3;
-    grid-row: 2;
-  }
-
-  .five {
-    grid-column: 5;
-    grid-row: 2;
+    max-width: 50%;
   }
 
   img {
     width: 100px;
     height: auto;
-
-    margin-inline: 2%;
   }
 
   .icon {
@@ -134,7 +107,7 @@ import Card from "../components/Card.astro";
 
   .produkter h1 {
     text-align: center;
-    margin-bottom: 10%;
+    margin-bottom: 2.5%;
   }
 
   .grid_3-auto {
@@ -143,7 +116,7 @@ import Card from "../components/Card.astro";
 
     gap: 5%;
 
-    height: 1750px;
+    height: 2300px;
   }
 
   .grid_3-auto img {
@@ -155,10 +128,64 @@ import Card from "../components/Card.astro";
   @media (max-width: 1200px) {
     .underkategori {
       margin-top: 120px;
+
+      max-width: 70%;
     }
 
     .grid_3-auto {
-      height: 1900px;
+      height: 1700px;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .underkategori {
+      max-width: 80%;
+    }
+
+    .grid_3-auto {
+      grid-template-columns: 1fr 1fr;
+      height: 2700px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .underkategori {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      text-align: center;
+      gap: 0px;
+
+      max-width: 500px;
+    }
+
+    .one {
+      grid-column: 2;
+      grid-row: 1;
+    }
+
+    .two {
+      grid-column: 4;
+      grid-row: 1;
+    }
+
+    .three {
+      grid-column: 1;
+      grid-row: 2;
+    }
+
+    .four {
+      grid-column: 3;
+      grid-row: 2;
+    }
+
+    .five {
+      grid-column: 5;
+      grid-row: 2;
+    }
+    .grid_3-auto {
+      grid-template-columns: 1fr 1fr;
+      height: 1800px;
     }
   }
 
