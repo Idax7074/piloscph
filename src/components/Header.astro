@@ -8,9 +8,9 @@ import Logo from "./Logo.astro";
   </div>
   <nav class="menu">
     <button class="toggle-btn">
-      <span class="bar1"></span>
-      <span class="bar2"></span>
-      <span class="bar3"></span>
+      <span class="bar1" aria-label="Burgermenu"></span>
+      <span class="bar2" aria-label="Burgermenu"></span>
+      <span class="bar3" aria-label="Burgermenu"></span>
     </button>
     <ul>
       <li><a href="/om">Om Pilos</a></li>
@@ -217,7 +217,6 @@ import Logo from "./Logo.astro";
     .menu.shown a {
       color: var(--dark-brown);
       text-decoration: none;
-      text-transform: uppercase;
       line-height: 1.5rem;
     }
 
