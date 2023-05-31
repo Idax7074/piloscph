@@ -5,12 +5,15 @@ const url = "https://sjogjgnnezgfpkahworr.supabase.co/rest/v1/piloscph_produkter
 //Lav variablen "api" med vores api nøgle
 const api = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNqb2dqZ25uZXpnZnBrYWh3b3JyIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODQzOTUwNTQsImV4cCI6MTk5OTk3MTA1NH0.vWMUEXcwFWRZ1s2ukS1uPY9qj2Rglhz-eEeRLppRxt0";
 
+//Lav variablen "data" som venter på url fetchet med GET metode
+//API nøgle godkener adgang
 const data = await fetch(url, {
   method: "GET",
   headers: {
     apikey: api,
   },
 }).then((res) => res.json());
+//Dataen bliver hentet som JSON-fil
 
 import MainLayout from "../layouts/MainLayout.astro";
 import Button from "../components/Button.astro";
@@ -92,7 +95,7 @@ import "../styles/style.css";
   }
 
   .bottom a {
-    font-size: var(--font-small);
+    font-size: var(--font-a);
     color: var(--white);
   }
 
@@ -110,7 +113,7 @@ import "../styles/style.css";
   }
 
   h1 {
-    margin-bottom: 10%;
+    margin-bottom: 5%;
   }
 
   .om img {
@@ -123,7 +126,7 @@ import "../styles/style.css";
   }
 
   .button a {
-    font-size: var(--font-small);
+    font-size: var(--font-p);
     color: var(--white);
   }
 
@@ -166,9 +169,6 @@ import "../styles/style.css";
       font-size: 2.5rem;
     }
 
-    .bottom {
-      left: 25.5%;
-    }
     .om {
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 1fr;
@@ -211,10 +211,6 @@ import "../styles/style.css";
       font-size: 2rem;
     }
 
-    .bottom {
-      left: 22%;
-    }
-
     h1 {
       display: flex;
       justify-content: center;
@@ -227,7 +223,7 @@ import "../styles/style.css";
     }
 
     .bottom {
-      top: 50%;
+      top: 60%;
     }
 
     .bottom a {

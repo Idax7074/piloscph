@@ -1,20 +1,27 @@
 ---
+//Henter getStaticPaths funktionen ned
 export async function getStaticPaths() {
+  //Lav variablen "url" med vores URL fra supabase
   const url = "https://sjogjgnnezgfpkahworr.supabase.co/rest/v1/piloscph_produkter";
+
+  //Lav variablen "api" med vores api nøgle
   const api = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNqb2dqZ25uZXpnZnBrYWh3b3JyIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODQzOTUwNTQsImV4cCI6MTk5OTk3MTA1NH0.vWMUEXcwFWRZ1s2ukS1uPY9qj2Rglhz-eEeRLppRxt0";
 
-  const options = {
+  //Lav variablen "data" som venter på url fetchet med GET metode
+  //API nøgle godkener adgang
+  const data = await fetch(url, {
     method: "GET",
     headers: {
       apikey: api,
     },
-  };
-  const data = await fetch(url, options).then((response) => response.json());
+  }).then((response) => response.json());
+  //Dataen bliver hentet som JSON-fil
 
-  const pagesGenerate = data.map((onePost) => {
+  //
+  const pagesGenerate = data.map((oneProduct) => {
     return {
-      params: { slug: onePost.slug },
-      props: { mug: onePost },
+      params: { slug: oneProduct.slug },
+      props: { mug: oneProduct },
     };
   });
   console.log(data);

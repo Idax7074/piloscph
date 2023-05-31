@@ -1,6 +1,5 @@
 ---
 /*https://sjogjgnnezgfpkahworr.supabase.co */
-
 /*eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNqb2dqZ25uZXpnZnBrYWh3b3JyIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODQzOTUwNTQsImV4cCI6MTk5OTk3MTA1NH0.vWMUEXcwFWRZ1s2ukS1uPY9qj2Rglhz-eEeRLppRxt0 */
 
 //Lav variablen "url" med vores URL fra supabase
@@ -9,12 +8,15 @@ const url = "https://sjogjgnnezgfpkahworr.supabase.co/rest/v1/piloscph_produkter
 //Lav variablen "api" med vores api nøgle
 const api = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNqb2dqZ25uZXpnZnBrYWh3b3JyIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODQzOTUwNTQsImV4cCI6MTk5OTk3MTA1NH0.vWMUEXcwFWRZ1s2ukS1uPY9qj2Rglhz-eEeRLppRxt0";
 
+//Lav variablen "data" som venter på url fetchet med GET metode
+//API nøgle godkener adgang
 const data = await fetch(url, {
   method: "GET",
   headers: {
     apikey: api,
   },
 }).then((res) => res.json());
+//Dataen bliver hentet som JSON-fil
 
 import MainLayout from "../../layouts/MainLayout.astro";
 import Card from "../../components/Card.astro";
@@ -46,7 +48,7 @@ import Card from "../../components/Card.astro";
   }
 
   h1 {
-    margin-bottom: 10%;
+    margin-bottom: 2%;
   }
 
   p {
@@ -73,7 +75,7 @@ import Card from "../../components/Card.astro";
 
     gap: 10%;
 
-    height: 700px;
+    height: 950px;
   }
 
   @media (max-width: 1200px) {
