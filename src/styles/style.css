@@ -29,11 +29,13 @@
 @font-face {
   font-family: "NeueHaasLight";
   src: url("NeueHaasDisplayLight.ttf") format("ttf");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "NeueHaasMedium";
   src: url("NeueHaasDisplayMediu.ttf") format("ttf");
+  font-display: swap;
 }
 
 * {
