@@ -28,6 +28,7 @@ import Card from "../../components/Card.astro";
     <p><a href="/kategori">Alle produkter</a> / <span>Mugs</span></p>
   </section>
   <section class="grid_3-auto">
+    <!--Tager alle objekterne i mug variablen og mapper dem som card i HTML'en -->
     {data.map((mug) => <Card image={`/images/${mug.image}`} name={mug.name} price={mug.price} slug={mug.slug} />)}
   </section>
 </MainLayout>
@@ -55,7 +56,7 @@ import Card from "../../components/Card.astro";
     text-transform: uppercase;
   }
 
-  a {
+  p a {
     font-size: var(--font-p);
   }
 
@@ -79,8 +80,8 @@ import Card from "../../components/Card.astro";
   }
 
   @media (max-width: 1200px) {
-    section {
-      margin-top: 120px;
+    .category {
+      margin-top: 100px;
     }
 
     .grid_3-auto {
@@ -96,7 +97,7 @@ import Card from "../../components/Card.astro";
 
   @media (max-width: 400px) {
     section {
-      margin-top: 100px;
+      margin-top: 70px;
     }
 
     .grid_3-auto {
@@ -106,7 +107,7 @@ import Card from "../../components/Card.astro";
     }
 
     h1 {
-      margin-bottom: 20%;
+      margin-bottom: 2.5%;
     }
   }
 </style>

@@ -7,169 +7,170 @@ import Logo from "../components/Logo.astro";
   <div class="footer">
     <div class="col_1">
       <Logo />
-      <!-- <a href="/"><img src="/logo.svg" alt="" /></a> -->
       <div class="social-links">
         <a href="https://www.instagram.com/piloscph/" aria-label="Følg link til instagram"></a><i class="fab fa-instagram"></i>
+        <a href="#" aria-label="Følg link til Facebook"><i class="fab fa-facebook"></i></a>
       </div>
-      <a href="#" aria-label="Følg link til Facebook"><i class="fab fa-facebook"></i></a>
+    </div>
+    <div class="col_2">
+      <a href="mailto:Kontakt@piloscph.dk">kontakt@piloscph.dk</a>
+      <p>CVR. 41565467</p>
+      <p>Rantzausgade 25</p>
+      <p>2200 KBH N</p>
+    </div>
+    <div class="col_3">
+      <a href="/">Forside</a>
+      <a href="/about">Om mig</a>
+      <a href="#">FAQ</a>
+      <a href="#">Handelsbetingelser</a>
+      <a href="#">Personpolitik</a>
+      <a href="/kontakt">Kontakt</a>
+    </div>
+    <div class="col_4">
+      <h3>Tilmeld dig og modtag seneste nyheder</h3>
+      <form>
+        <input type="email" placeholder="Piloscph@gmail.com" required />
+        <br />
+        <Button variant="primary">Tilmeld</Button>
+      </form>
     </div>
   </div>
-  <div class="col_2">
-    <a href="mailto:Kontakt@piloscph.dk">kontakt@piloscph.dk</a>
-    <p>CVR. 41565467</p>
-    <p>Rantzausgade 25</p>
-    <p>2200 KBH N</p>
+  <div class="designby">
+    <p>Copyright © 2023 Piloscph</p>
+    <p>Web design by RESI</p>
   </div>
-  <div class="col_3">
-    <a href="/">Forside</a>
-    <a href="/about">Om mig</a>
-    <a href="#">FAQ</a>
-    <a href="#">Handelsbetingelser</a>
-    <a href="#">Personpolitik</a>
-    <a href="/kontakt">Kontakt</a>
-  </div>
-  <div class="col_4">
-    <h3>Tilmeld dig og modtag seneste nyheder</h3>
-    <form>
-      <input type="email" placeholder="Piloscph@gmail.com" required />
-      <br />
-      <Button variant="primary">Tilmeld</Button>
-    </form>
-  </div>
-</footer>
-<div class="designby">
-  <p>Copyright © 2023 Piloscph</p>
-  <p>Web design by RESI</p>
-</div>
 
-<style>
-  footer {
-    width: 100%;
-    background-color: var(--lightest_brown);
-    padding-top: 5%;
-    padding-bottom: 2%;
-    margin-top: 100px;
-  }
-  .footer {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 2fr;
-  }
-
-  .social-links i {
-    font-size: var(--font-h3);
-    margin-inline: 2%;
-  }
-
-  .social-links a {
-    color: var(--black);
-  }
-
-  .designby {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    margin-top: 50px;
-  }
-
-  .designby p {
-    font-size: var(--font-smaller);
-  }
-
-  img {
-    width: 25%;
-    height: auto;
-    margin-left: 15px;
-    height: auto;
-  }
-
-  .footer div {
-    text-align: center;
-  }
-
-  .col_1 {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .col_2 {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .col_2 > * {
-    font-size: var(--font-p);
-    color: var(--dark-brown);
-
-    font-weight: 400;
-  }
-
-  .col_2 a {
-    text-transform: lowercase;
-  }
-
-  .col_3 {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .col_3 a {
-    font-size: var(--font-p);
-    color: var(--dark-brown);
-    text-transform: capitalize;
-  }
-
-  .col_4 {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .col_4 h3 {
-    font-family: "NeueHaasLight", sans-serif;
-    font-size: var(--font-small);
-    color: var(--dark-brown);
-  }
-
-  .col_4 form input {
-    border: 2px solid #51473d;
-    background-color: transparent;
-    width: 50%;
-    height: 35%;
-
-    margin-block: 30px;
-  }
-
-  form input {
-    padding-left: 10px;
-  }
-
-  @media (max-width: 900px) {
+  <style>
+    footer {
+      width: 100%;
+      background-color: var(--lightest_brown);
+      padding-top: 5%;
+      padding-bottom: 2%;
+      margin-top: 100px;
+    }
     .footer {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: 1fr 1fr 1fr 1fr;
-      gap: 5%;
-      row-gap: 10%;
+      grid-template-columns: 1fr 1fr 1fr 2fr;
+    }
+
+    .social-links i {
+      font-size: var(--font-h3);
+      margin-inline: 2%;
+    }
+
+    .social-links a {
+      color: var(--black);
+    }
+
+    .designby {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      margin-top: 50px;
+    }
+
+    .designby p {
+      font-size: var(--font-smaller);
+    }
+
+    img {
+      width: 25%;
+      height: auto;
+      margin-left: 15px;
+      height: auto;
+    }
+
+    .footer div {
+      text-align: center;
     }
 
     .col_1 {
-      grid-column: span 2;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .col_2 {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
     }
 
     .col_2 > * {
-      font-size: var(--font-small);
+      font-size: var(--font-p);
       color: var(--dark-brown);
+
+      font-weight: 400;
+    }
+
+    .col_2 a {
+      text-transform: lowercase;
+    }
+
+    .col_3 {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
     }
 
     .col_3 a {
+      font-size: var(--font-p);
+      color: var(--dark-brown);
+      text-transform: capitalize;
+    }
+
+    .col_4 {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .col_4 h3 {
+      font-family: "NeueHaasLight", sans-serif;
       font-size: var(--font-small);
       color: var(--dark-brown);
     }
 
-    .col_4 {
-      grid-column: span 2;
+    .col_4 form input {
+      border: 2px solid #51473d;
+      background-color: transparent;
+      width: 50%;
+      height: 35%;
+
+      margin-block: 30px;
     }
-  }
-</style>
+
+    form input {
+      padding-left: 10px;
+    }
+
+    @media (max-width: 900px) {
+      .footer {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        gap: 5%;
+        row-gap: 10%;
+
+        margin-inline: 5%;
+      }
+
+      .col_1 {
+        grid-column: span 2;
+      }
+
+      .col_2 > * {
+        font-size: var(--font-small);
+        color: var(--dark-brown);
+      }
+
+      .col_3 a {
+        font-size: var(--font-small);
+        color: var(--dark-brown);
+      }
+
+      .col_4 {
+        grid-column: span 2;
+      }
+    }
+  </style>
+</footer>
